@@ -77,10 +77,12 @@ PCScreen::PCScreen(QWidget * parent) : QWidget(parent){
     actRed = new Rate(this);
     actRed->setFrameShape(QFrame::Box);
     actRed->setObjectName("akt_red");
+    actRed->hide();
 
     actBlue = new Rate(this);
     actBlue->setFrameShape(QFrame::Box);
     actBlue->setObjectName("akt_blue");
+    actBlue->hide();
 
     //fam_red = new Fam(col_red, "", 63,"",this);
     //fam_red->setObjectName("fam_red");
@@ -250,9 +252,10 @@ PCScreen::PCScreen(QWidget * parent) : QWidget(parent){
 
     nv_red = new NV();
     nv_red->setObjectName("nv_red");
-    //nv_red->sbros();
+    nv_red->hide();
     nv_blue = new NV();
     nv_blue->setObjectName("nv_blue");
+    nv_blue->hide();
     //nv_blue->setFocusPolicy(Qt::NoFocus);
 
     cat = new QPushButton(this);//("yellow", this);
@@ -393,25 +396,25 @@ PCScreen::PCScreen(QWidget * parent) : QWidget(parent){
 
     grid->addWidget(rateRed,                0,  0,  19, 24);
     grid->addWidget(rateBlue,               0,  44, 19, 24);
-    grid->addWidget(actRed,                 19, 0,  13, 14);
-    grid->addWidget(actBlue,                19, 54, 13, 14);
+    //grid->addWidget(actRed,                 19, 0,  13, 14);
+    //grid->addWidget(actBlue,                19, 54, 13, 14);
 
-    grid->addWidget(btnQueue,               29, 14, 3, 5);
+    grid->addWidget(btnQueue,               29, 7, 3, 10);
     //grid->addWidget(btnSetTime,        29, 19, 3, 5)
 
-    grid->addWidget(btnParter_red,          26, 44, 2,  5);
-    grid->addWidget(btnTime,                29, 44, 3,  10);
-    grid->addWidget(btnParter_blue,         26, 49, 2,  5);
+    grid->addWidget(btnParter_red,          26, 7, 2,  6);
+    grid->addWidget(btnTime,                29, 51, 3,  10);
+    grid->addWidget(btnParter_blue,         26, 55, 2,  6);
 
-    grid->addWidget(btnTehTime_red,         24,  44, 2,  5);
+    grid->addWidget(btnTehTime_red,         26,  13, 2,  4);
     //grid->addWidget(btnSettings,            4,  30, 2,  8);
-    grid->addWidget(btnTehTime_blue,        24,  49, 2,  5);
+    grid->addWidget(btnTehTime_blue,        26,  51, 2,  4);
 
-    grid->addWidget(np_red,                 19, 19, 5,  5);
-    grid->addWidget(np_blue,                19, 44, 5,  5);
+    grid->addWidget(np_red,                 19, 9, 6,  6);
+    grid->addWidget(np_blue,                19, 53, 6,  6);
 
-    grid->addWidget(nv_red,                 19, 14, 5,  5);
-    grid->addWidget(nv_blue,                19, 49, 5,  5);
+    //grid->addWidget(nv_red,                 19, 14, 5,  5);
+    //grid->addWidget(nv_blue,                19, 49, 5,  5);
 
 
 
