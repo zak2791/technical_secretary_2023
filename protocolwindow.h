@@ -198,6 +198,7 @@ private:
     LeftRightPushButton* btnZp;
     LeftRightPushButton* btnP1;
     LeftRightPushButton* btnP2;
+    LeftRightPushButton* btnP3;
     LeftRightPushButton* btnNy;
     LeftRightPushButton* btnDoc;
     LeftRightPushButton* btnVin;
@@ -250,6 +251,8 @@ private:
     LeftRightPushButton* btnP1_blue;
     LeftRightPushButton* btnP2_red;
     LeftRightPushButton* btnP2_blue;
+    LeftRightPushButton* btnP3_red;
+    LeftRightPushButton* btnP3_blue;
 
 public slots:
     void Back(void);

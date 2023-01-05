@@ -172,7 +172,7 @@ ProtocolWindow::ProtocolWindow(QWidget* p) : QWidget(p)
     btnA_blue->setStyleSheet("background-color: blue; color: white");
     connect(btnA_blue, SIGNAL(left_right_clicked(bool, QString)), this, SLOT(Rate(bool, QString)));
 
-    btn2P = new LeftRightPushButton("", this);
+    btn2P = new LeftRightPushButton(" ", this);
     btn2P->setObjectName("btn2P");
     btn2P->setIcon(QIcon("A22.png"));
     btn2P->setMinimumSize(30, 30);
@@ -180,7 +180,7 @@ ProtocolWindow::ProtocolWindow(QWidget* p) : QWidget(p)
     //btn2P->setStyleSheet("background-color: red; color: white");
     connect(btn2P, SIGNAL(left_right_clicked(bool, QString)), this, SLOT(Rate(bool, QString)));
 
-    btn2P_red = new LeftRightPushButton("", this);
+    btn2P_red = new LeftRightPushButton(" ", this);
     btn2P_red->setObjectName("btn2P_red");
     btn2P_red->setIcon(QIcon("A2.png"));
     btn2P_red->setMinimumSize(30, 30);
@@ -188,7 +188,7 @@ ProtocolWindow::ProtocolWindow(QWidget* p) : QWidget(p)
     btn2P_red->setStyleSheet("background-color: red; color: white");
     connect(btn2P_red, SIGNAL(left_right_clicked(bool, QString)), this, SLOT(Rate(bool, QString)));
 
-    btn2P_blue = new LeftRightPushButton("", this);
+    btn2P_blue = new LeftRightPushButton(" ", this);
     btn2P_blue->setObjectName("btn2P_blue");
     btn2P_blue->setIcon(QIcon("A2.png"));
     btn2P_blue->setMinimumSize(30, 30);
@@ -196,7 +196,7 @@ ProtocolWindow::ProtocolWindow(QWidget* p) : QWidget(p)
     btn2P_blue->setStyleSheet("background-color: blue; color: white");
     connect(btn2P_blue, SIGNAL(left_right_clicked(bool, QString)), this, SLOT(Rate(bool, QString)));
 
-    btn1P = new LeftRightPushButton("", this);
+    btn1P = new LeftRightPushButton(" ", this);
     btn1P->setObjectName("btn1P");
     btn1P->setIcon(QIcon("A12.png"));
     btn1P->setMinimumSize(30, 30);
@@ -204,7 +204,7 @@ ProtocolWindow::ProtocolWindow(QWidget* p) : QWidget(p)
     //btn1P->setStyleSheet("background-color: red; color: white");
     connect(btn1P, SIGNAL(left_right_clicked(bool, QString)), this, SLOT(Rate(bool, QString)));
 
-    btn1P_red = new LeftRightPushButton("", this);
+    btn1P_red = new LeftRightPushButton(" ", this);
     btn1P_red->setObjectName("btn1P_red");
     btn1P_red->setIcon(QIcon("A1.png"));
     btn1P_red->setMinimumSize(30, 30);
@@ -212,7 +212,7 @@ ProtocolWindow::ProtocolWindow(QWidget* p) : QWidget(p)
     btn1P_red->setStyleSheet("background-color: red; color: white");
     connect(btn1P_red, SIGNAL(left_right_clicked(bool, QString)), this, SLOT(Rate(bool, QString)));
 
-    btn1P_blue = new LeftRightPushButton("", this);
+    btn1P_blue = new LeftRightPushButton(" ", this);
     btn1P_blue->setObjectName("btn1P_blue");
     btn1P_blue->setIcon(QIcon("A1.png"));
     btn1P_blue->setMinimumSize(30, 30);
@@ -335,6 +335,13 @@ ProtocolWindow::ProtocolWindow(QWidget* p) : QWidget(p)
     //btnP2->setStyleSheet("background-color: red; color: white");
     connect(btnP2, SIGNAL(left_right_clicked(bool, QString)), this, SLOT(Rate(bool, QString)));
 
+    btnP3 = new LeftRightPushButton("П3", this);
+    btnP3->setObjectName("btnP3");
+    btnP3->setMinimumSize(30, 30);
+    btnP3->setFocusPolicy(Qt::NoFocus);
+    //btnP2->setStyleSheet("background-color: red; color: white");
+    connect(btnP3, SIGNAL(left_right_clicked(bool, QString)), this, SLOT(Rate(bool, QString)));
+
     btnP2_red = new LeftRightPushButton("П2", this);
     btnP2_red->setObjectName("btnP2_red");
     btnP2_red->setMinimumSize(30, 30);
@@ -348,6 +355,20 @@ ProtocolWindow::ProtocolWindow(QWidget* p) : QWidget(p)
     btnP2_blue->setFocusPolicy(Qt::NoFocus);
     btnP2_blue->setStyleSheet("background-color: blue; color: white");
     connect(btnP2_blue, SIGNAL(left_right_clicked(bool, QString)), this, SLOT(Rate(bool, QString)));
+
+    btnP3_red = new LeftRightPushButton("П3", this);
+    btnP3_red->setObjectName("btnP3_red");
+    btnP3_red->setMinimumSize(30, 30);
+    btnP3_red->setFocusPolicy(Qt::NoFocus);
+    btnP3_red->setStyleSheet("background-color: red; color: white");
+    connect(btnP3_red, SIGNAL(left_right_clicked(bool, QString)), this, SLOT(Rate(bool, QString)));
+
+    btnP3_blue = new LeftRightPushButton("П3", this);
+    btnP3_blue->setObjectName("btnP3_blue");
+    btnP3_blue->setMinimumSize(30, 30);
+    btnP3_blue->setFocusPolicy(Qt::NoFocus);
+    btnP3_blue->setStyleSheet("background-color: blue; color: white");
+    connect(btnP3_blue, SIGNAL(left_right_clicked(bool, QString)), this, SLOT(Rate(bool, QString)));
 
     btnNy = new LeftRightPushButton("н/я", this);
     btnNy->setObjectName("NY");
@@ -490,34 +511,37 @@ ProtocolWindow::ProtocolWindow(QWidget* p) : QWidget(p)
     grid.addWidget(btn1,          1, 28, 4, 4);
     grid.addWidget(btn1_red,      0, 28, 3, 4);
     grid.addWidget(btn1_blue,     3, 28, 3, 4);
-    grid.addWidget(btnA,          1, 32, 4, 4);
-    grid.addWidget(btnA_red,      0, 32, 3, 4);
-    grid.addWidget(btnA_blue,     3, 32, 3, 4);
-    grid.addWidget(btn2P,         1, 36, 4, 4);
-    grid.addWidget(btn2P_red,     0, 36, 3, 4);
-    grid.addWidget(btn2P_blue,    3, 36, 3, 4);
-    grid.addWidget(btn1P,         1, 40, 4, 4);
-    grid.addWidget(btn1P_red,     0, 40, 3, 4);
-    grid.addWidget(btn1P_blue,    3, 40, 3, 4);
-    grid.addWidget(btnAP,         1, 44, 4, 4);
-    grid.addWidget(btnAP_red,     0, 44, 3, 4);
-    grid.addWidget(btnAP_blue,    3, 44, 3, 4);
-    grid.addWidget(btnZv,         1, 48, 4, 4);
-    grid.addWidget(btnZv_red,     0, 48, 3, 4);
-    grid.addWidget(btnZv_blue,    3, 48, 3, 4);
-    grid.addWidget(btnVyh,        1, 52, 4, 4);
-    grid.addWidget(btnVyh_red,    0, 52, 3, 4);
-    grid.addWidget(btnVyh_blue,   3, 52, 3, 4);
-    grid.addWidget(btnZp,         1, 56, 4, 4);
-    grid.addWidget(btnZp_red,     0, 56, 3, 4);
-    grid.addWidget(btnZp_blue,    3, 56, 3, 4);
-    grid.addWidget(btnP1,         1, 60, 4, 4);
-    grid.addWidget(btnP1_red,     0, 60, 3, 4);
-    grid.addWidget(btnP1_blue,    3, 60, 3, 4);
-    grid.addWidget(btnP2,         1, 64, 4, 4);
-    grid.addWidget(btnP2_red,     0, 64, 3, 4);
-    grid.addWidget(btnP2_blue,    3, 64, 3, 4);
-    grid.addWidget(btnBack,       0, 68, 6, 4);
+    //grid.addWidget(btnA,          1, 32, 4, 4);
+    //grid.addWidget(btnA_red,      0, 32, 3, 4);
+    //grid.addWidget(btnA_blue,     3, 32, 3, 4);
+    grid.addWidget(btn2P,         1, 32, 4, 4);
+    grid.addWidget(btn2P_red,     0, 32, 3, 4);
+    grid.addWidget(btn2P_blue,    3, 32, 3, 4);
+    grid.addWidget(btn1P,         1, 36, 4, 4);
+    grid.addWidget(btn1P_red,     0, 36, 3, 4);
+    grid.addWidget(btn1P_blue,    3, 36, 3, 4);
+    //grid.addWidget(btnAP,         1, 44, 4, 4);
+    //grid.addWidget(btnAP_red,     0, 44, 3, 4);
+    //grid.addWidget(btnAP_blue,    3, 44, 3, 4);
+    grid.addWidget(btnZv,         1, 40, 4, 4);
+    grid.addWidget(btnZv_red,     0, 40, 3, 4);
+    grid.addWidget(btnZv_blue,    3, 40, 3, 4);
+    grid.addWidget(btnVyh,        1, 44, 4, 4);
+    grid.addWidget(btnVyh_red,    0, 44, 3, 4);
+    grid.addWidget(btnVyh_blue,   3, 44, 3, 4);
+    grid.addWidget(btnZp,         1, 48, 4, 4);
+    grid.addWidget(btnZp_red,     0, 48, 3, 4);
+    grid.addWidget(btnZp_blue,    3, 48, 3, 4);
+    grid.addWidget(btnP1,         1, 52, 4, 4);
+    grid.addWidget(btnP1_red,     0, 52, 3, 4);
+    grid.addWidget(btnP1_blue,    3, 52, 3, 4);
+    grid.addWidget(btnP2,         1, 56, 4, 4);
+    grid.addWidget(btnP2_red,     0, 56, 3, 4);
+    grid.addWidget(btnP2_blue,    3, 56, 3, 4);
+    grid.addWidget(btnP3,         1, 60, 4, 4);
+    grid.addWidget(btnP3_red,     0, 60, 3, 4);
+    grid.addWidget(btnP3_blue,    3, 60, 3, 4);
+    grid.addWidget(btnBack,       0, 64, 6, 8);
     grid.addWidget(sportsmenRed,  6, 0, 4, 10);
     grid.addWidget(sportsmenBlue, 10, 0, 4, 10);
     grid.addWidget(rateRed,       6, 10, 4, 53);
@@ -578,6 +602,9 @@ void ProtocolWindow::keyMode(int mode){
         btnP2->setVisible(false);
         btnP2_red->setVisible(true);
         btnP2_blue->setVisible(true);
+        btnP3->setVisible(false);
+        btnP3_red->setVisible(true);
+        btnP3_blue->setVisible(true);
         btnZp->setVisible(false);
         btnZp_red->setVisible(true);
         btnZp_blue->setVisible(true);
@@ -612,6 +639,9 @@ void ProtocolWindow::keyMode(int mode){
         btnP2->setVisible(true);
         btnP2_red->setVisible(false);
         btnP2_blue->setVisible(false);
+        btnP3->setVisible(true);
+        btnP3_red->setVisible(false);
+        btnP3_blue->setVisible(false);
         btnZp->setVisible(true);
         btnZp_red->setVisible(false);
         btnZp_blue->setVisible(false);
@@ -964,6 +994,8 @@ void ProtocolWindow::resizeEvent(QResizeEvent*){
 
 bool ProtocolWindow::calculation(){
     bool clearVin = false;          //флаг чистой победы
+    bool red_p3 = false;            //флаг третьего нарушения правил
+    bool blue_p3 = false;           //флаг третьего нарушения правил
     bool red_p2 = false;            //флаг второго нарушения правил
     bool blue_p2 = false;
     bool red_p1 = false;
@@ -1004,7 +1036,9 @@ bool ProtocolWindow::calculation(){
             ResultRed->setText("5");
             ResultBlue->setText("0");
             clearVin = true;
-        }else if(val.toString() == "П2" && each->strikethrough == false)
+        }else if(val.toString() == "П3" && each->strikethrough == false)
+            red_p3 = true;
+        else if(val.toString() == "П2" && each->strikethrough == false)
             red_p2 = true;
         else if(val.toString() == "П1" && each->strikethrough == false)
             red_p1 = true;
@@ -1045,7 +1079,9 @@ bool ProtocolWindow::calculation(){
             ResultRed->setText("0");
             ResultBlue->setText("5");
             clearVin = true;
-        }else if(val.toString() == "П2" && each->strikethrough == false)
+        }else if(val.toString() == "П3" && each->strikethrough == false)
+            blue_p3 = true;
+        else if(val.toString() == "П2" && each->strikethrough == false)
             blue_p2 = true;
         else if(val.toString() == "П1" && each->strikethrough == false)
             blue_p1 = true;
