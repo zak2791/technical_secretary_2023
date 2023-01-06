@@ -174,8 +174,12 @@ ProtocolWindow::ProtocolWindow(QWidget* p) : QWidget(p)
 
     btn2P = new LeftRightPushButton(" ", this);
     btn2P->setObjectName("btn2P");
-    btn2P->setIcon(QIcon("A22.png"));
+
+    //btn2P->setIcon(QIcon("A22.png"));
     btn2P->setMinimumSize(30, 30);
+    //btn2P->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+    btn2P->setStyleSheet("{background-position: center bottom; background-repeat: no-repeat; background-origin: content;"
+                         " background-image: url(/images/A22.png);}");
     btn2P->setFocusPolicy(Qt::NoFocus);
     //btn2P->setStyleSheet("background-color: red; color: white");
     connect(btn2P, SIGNAL(left_right_clicked(bool, QString)), this, SLOT(Rate(bool, QString)));
