@@ -183,16 +183,16 @@ private:
     LeftRightPushButton* btnNPB;
     LeftRightPushButton* btnNkd;
     LeftRightPushButton* btnTNk;
-    LeftRightPushButton* btnAr;
+    //LeftRightPushButton* btnAr;
     LeftRightPushButton* btnPs;  
 
     QPushButton* btnBack;
     LeftRightPushButton* btn2;
     LeftRightPushButton* btn1;
-    LeftRightPushButton* btnA;
+    //LeftRightPushButton* btnA;
     LeftRightPushButton* btn2P;
     LeftRightPushButton* btn1P;
-    LeftRightPushButton* btnAP;
+    //LeftRightPushButton* btnAP;
     LeftRightPushButton* btnZv;
     LeftRightPushButton* btnVyh;
     LeftRightPushButton* btnZp;
@@ -233,14 +233,14 @@ private:
     LeftRightPushButton* btn2_blue;
     LeftRightPushButton* btn1_red;
     LeftRightPushButton* btn1_blue;
-    LeftRightPushButton* btnA_red;
-    LeftRightPushButton* btnA_blue;
+    //LeftRightPushButton* btnA_red;
+    //LeftRightPushButton* btnA_blue;
     LeftRightPushButton* btn2P_red;
     LeftRightPushButton* btn2P_blue;
     LeftRightPushButton* btn1P_red;
     LeftRightPushButton* btn1P_blue;
-    LeftRightPushButton* btnAP_red;
-    LeftRightPushButton* btnAP_blue;
+    //LeftRightPushButton* btnAP_red;
+    //LeftRightPushButton* btnAP_blue;
     LeftRightPushButton* btnZv_red;
     LeftRightPushButton* btnZv_blue;
     LeftRightPushButton* btnVyh_red;
@@ -281,6 +281,7 @@ signals:
     void nameBlue(QString);
     void regBlue(QString);
     void setWeight(QString);
+    void show_next(QString, QString);
 
 };
 

@@ -18,6 +18,15 @@
 
 TVScreen::TVScreen(QWidget * parent) : QWidget(parent) {
 
+    QLabel* lblNextRed = new QLabel("");
+    lblNextRed->setPixmap(QPixmap("next_blue.png"));
+    lblNextRed->setScaledContents( true );
+    lblNextRed->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
+
+    QLabel* lblNextBlue = new QLabel("");
+    lblNextBlue->setPixmap(QPixmap("next_red.png"));
+    lblNextBlue->setScaledContents( true );
+    lblNextBlue->setSizePolicy( QSizePolicy::Ignored, QSizePolicy::Ignored );
 
 	col_red = "white";
 	col_blue = "white";
@@ -56,7 +65,10 @@ TVScreen::TVScreen(QWidget * parent) : QWidget(parent) {
 	reg_blue = new Fam(col_blue, "", 10, "Lucida Console");
 	//reg_blue->setObjectName("reg_blue");
 
-    next_fam_red = new Fam(col_red, "", 63, "", this);
+    next_fam_red = new Fam(col_blue, "", 63, "", this);
+
+    //connect (this->)
+
     next_fam_blue = new Fam(col_blue, "", 63, "", this);
 
 	plus_red = new Plus(col_red, this);
@@ -134,6 +146,9 @@ TVScreen::TVScreen(QWidget * parent) : QWidget(parent) {
     grid->addWidget(np_blue,    29, 9, 7, 7);
     grid->addWidget(np_red,     29, 54, 7, 7);
 
+    grid->addWidget(lblNextRed,    32,  0,  5, 7);
+    grid->addWidget(lblNextBlue,   32, 61,  5, 7);
+
     //grid->addWidget(nv_blue,    24, 14, 5, 5);
     //grid->addWidget(nv_red,     24, 49, 5, 5);
 
@@ -150,6 +165,8 @@ TVScreen::TVScreen(QWidget * parent) : QWidget(parent) {
 
     grid->addWidget(next_fam_blue,    37,  0,  6, 34);
     grid->addWidget(next_fam_red,     37, 34,  6, 34);
+
+
 
     //grid->addWidget(flag_blue, 29, 14, 8, 10);
     //grid->addWidget(flag_red,  29, 44, 8, 10);

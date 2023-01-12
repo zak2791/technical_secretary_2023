@@ -22,6 +22,7 @@ FightQueue::FightQueue(QString addr, int _mat, QWidget *parent) : QDialog(parent
 
     currentY = 0;
 
+
     if (!db_in.open()){
         qDebug() << "Cannot open database:" << db_in.lastError();
     }else{
@@ -111,6 +112,7 @@ FightQueue::FightQueue(QString addr, int _mat, QWidget *parent) : QDialog(parent
 
                 connect(f.last(), SIGNAL(select_fight(QString)), this, SLOT(selectFight(QString)));
                 connect(f.last(), SIGNAL(show_fight(QString)), this, SLOT(showFight(QString)));
+                connect(f.last(), SIGNAL(show_next(QString, QString)), this, SIGNAL(show_next(QString, QString)));
                 currentY += 110;
 
             }

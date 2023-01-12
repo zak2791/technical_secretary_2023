@@ -24,7 +24,7 @@ private slots:
 signals:
     void select_fight(QString);
     void show_fight(QString);
-
+    void show_next(QString, QString);
 };
 
 #endif // FIGHTQUEUE_H

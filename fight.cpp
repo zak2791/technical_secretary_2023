@@ -242,11 +242,15 @@ void Fight::setPix(QByteArray data){
     lblFight->setVisible(true);
 }
 
-void Fight::mousePressEvent(QMouseEvent*){
-    if(lblFight->isVisible())
-        show_fight(this->objectName());
-    else
-        select_fight(this->objectName());
+void Fight::mousePressEvent(QMouseEvent* e){
+    if(e->button() == Qt::LeftButton){
+        if(lblFight->isVisible())
+            emit show_fight(this->objectName());
+        else
+            emit select_fight(this->objectName());
+        }
+    if(e->button() == Qt::RightButton)
+        emit show_next(red.split("\n").at(0), blue.split("\n").at(0));
 }
 
 void Fight::paintEvent(QPaintEvent*){

@@ -102,6 +102,8 @@ private slots:
     void setMode(int);
     void setKeyMode(int);
 
+    void showNext(QString, QString);
+
 private:
     QLabel* lblCpuUsage;
     QWidget * formView;
@@ -172,6 +174,9 @@ private:
 
     QString cam1Url = "";
     QString cam2Url = "";
+
+    Fam* next_fam_red;
+    Fam* next_fam_blue;
 
     //QString currentFileCam1 = "";
     //QString currentFileCam2 = "";

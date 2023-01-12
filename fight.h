@@ -82,6 +82,7 @@ private slots:
 signals:
     void show_fight(QString);
     void select_fight(QString);
+    void show_next(QString, QString);
 
 };
 

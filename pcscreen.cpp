@@ -210,6 +210,7 @@ PCScreen::PCScreen(QWidget * parent) : QWidget(parent){
     ProtocolWindow* secr = new ProtocolWindow(this);
     secr->setObjectName("secr");
     connect(btnQueue, SIGNAL(clicked()), secr, SLOT(showQueue()));
+    connect(secr, SIGNAL(show_next(QString, QString)), this, SLOT(showNext(QString, QString)));
 
     //окно индикации наличия связи
     winConnect = new QLabel("нет\nсоединения");
@@ -386,6 +387,9 @@ PCScreen::PCScreen(QWidget * parent) : QWidget(parent){
 
     //lblTv.hide();
 
+    next_fam_red = new Fam(col_blue, "", 63, "", this);
+    next_fam_blue = new Fam(col_blue, "", 63, "", this);
+
     grid = new QGridLayout(this);
     grid->setObjectName("grid");
     //spacing = 6;
@@ -399,22 +403,22 @@ PCScreen::PCScreen(QWidget * parent) : QWidget(parent){
     //grid->addWidget(actRed,                 19, 0,  13, 14);
     //grid->addWidget(actBlue,                19, 54, 13, 14);
 
-    grid->addWidget(btnQueue,               29, 7, 3, 10);
+    grid->addWidget(btnQueue,               27, 7, 3, 10);
     //grid->addWidget(btnSetTime,        29, 19, 3, 5)
 
-    grid->addWidget(btnParter_red,          26, 7, 2,  6);
-    grid->addWidget(btnTime,                29, 51, 3,  10);
-    grid->addWidget(btnParter_blue,         26, 55, 2,  6);
+    grid->addWidget(btnParter_red,          25, 7, 2,  6);
+    grid->addWidget(btnTime,                27, 51, 3,  10);
+    grid->addWidget(btnParter_blue,         25, 55, 2,  6);
 
-    grid->addWidget(btnTehTime_red,         26,  13, 2,  4);
+    grid->addWidget(btnTehTime_red,         25,  13, 2,  4);
     //grid->addWidget(btnSettings,            4,  30, 2,  8);
-    grid->addWidget(btnTehTime_blue,        26,  51, 2,  4);
+    grid->addWidget(btnTehTime_blue,        25,  51, 2,  4);
 
     grid->addWidget(np_red,                 19, 9, 6,  6);
     grid->addWidget(np_blue,                19, 53, 6,  6);
 
-    //grid->addWidget(nv_red,                 19, 14, 5,  5);
-    //grid->addWidget(nv_blue,                19, 49, 5,  5);
+    grid->addWidget(next_fam_red,           30, 0, 2,  24);
+    grid->addWidget(next_fam_blue,          30, 44, 2,  24);
 
 
 
@@ -676,6 +680,7 @@ PCScreen::PCScreen(QWidget * parent) : QWidget(parent){
 
     connect(ui.cbMode,    SIGNAL(stateChanged(int)), this, SLOT(setMode(int)));
     connect(ui.cbKeyMode, SIGNAL(stateChanged(int)), this, SLOT(setKeyMode(int)));
+
 }
 
 void PCScreen::resetTimers(){
@@ -1517,4 +1522,10 @@ void PCScreen::drawTvScreenshot(){
     }
 }
 
-
+void PCScreen::showNext(QString red, QString blue){
+    qDebug()<<red<<blue;
+    tvScreen->next_fam_red->Text(red);
+    tvScreen->next_fam_blue->Text(blue);
+    next_fam_red->Text(">> " + red);
+    next_fam_blue->Text(">> " + blue);
+}
